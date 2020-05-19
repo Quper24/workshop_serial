@@ -1,0 +1,421 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+
+	background-color: rgb(255, 255, 255);
+	font-family: Arial, sans-serif;
+
+	font-size: 16px;
+	color: black;
+}
+
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+h1, h2, h3, p {
+	padding: 0;
+	margin: 0;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	padding: 0 !important;
+	border: 0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
+}
+
+.clearfix::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.container {
+	max-width: 1000px;
+	margin: 0 auto;
+	padding: 0 30px;
+}
+
+
+.leftMenu {
+	height: 50px;
+	background-color: transparent;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	width: 50px;
+	overflow: hidden;
+	transition: .5s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.leftMenu:hover {
+	height: 100%;
+	background-color: #00838f;
+}
+
+.leftMenu.openMenu {
+	height: 100%;
+	background-color: #00838f;
+}
+
+
+.hamburger {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #ffc107;
+	float: right;
+	margin-right: 5px;
+	margin-top: 5px;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: 0 3px 4px rgba(0, 0, 0, .5);
+	position: relative;
+	transform: rotate(0deg);
+}
+
+.hamburger.open {
+	background-color: tomato;
+	transition: all ease .5s;
+}
+
+.hamburger:hover {
+	box-shadow: none;
+	transition: all ease .5s;
+	transform: rotate(360deg);
+
+}
+
+.hamburger span {
+	width: 60%;
+	height: 3px;
+	background-color: #000;
+	display: block;
+	border-radius: 1px;
+	float: left;
+	margin-left: 20%;
+	transition: all ease .3s;
+}
+
+.hamburger span:nth-child(1) {
+	margin-top: 13px;
+}
+
+.hamburger span:nth-child(2) {
+	margin-top: 3px;
+}
+
+.hamburger span:nth-child(3) {
+	margin-top: 3px;
+}
+
+.open span:nth-child(1) {
+	background-color: #fff;
+	transform: rotate(45deg);
+	transition-timing-function: ease-in-out;
+	position: absolute;
+	top: 5px;
+	right: 8px;
+	width: 25px;
+	transition: all ease .5s;
+	border-radius: 10px;
+}
+
+.open span:nth-child(2) {
+	background-color: #fff;
+	transition-timing-function: ease-in-out;
+	margin-top: 18px;
+	opacity: 0;
+	transition: all ease .5s;
+}
+
+.open span:nth-child(3) {
+	background-color: #fff;
+	transform: rotate(-45deg);
+	transition-timing-function: ease-in-out;
+	margin-top: 0;
+	position: absolute;
+	top: 18px;
+	right: 8px;
+	width: 25px;
+	transition: all ease .5s;
+	border-radius: 10px;
+}
+
+.openMenu {
+	width: 250px;
+	overflow: hidden;
+	transition: .5s cubic-bezier(.8, .5, .2, 1.4);
+}
+
+.leftMenuList {
+	margin-top: 70px;
+	list-style: none;
+	padding: 0;
+}
+
+.leftMenuList li {
+	width: 250px;
+	/* height: 40px; */
+	line-height: 40px;
+	color: #fff;
+	border-bottom: 1px solid #00bcd6;
+	/* padding : 5px; */
+	font-size: 13px;
+}
+
+.leftMenuList li:hover {
+	background-color: #00bcd6;
+	transition: all ease .5s;
+	cursor: pointer;
+
+}
+
+.leftMenuList li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.leftMenuList li a svg {
+	width: 40px;
+	height: 40px;
+	float: left;
+	margin-left: 0;
+}
+
+.leftMenuList li a span {
+	text-decoration: none;
+	color: #fff;
+	width: 100%;
+}
+
+.dropdownlist li a span {
+	padding-left: 30px;
+}
+
+.leftMenuList i.fa {
+	font-size: 25px;
+	padding: 10px;
+	width: 50px;
+	text-align: center;
+}
+
+.leftMenuList li ul li {
+	padding: 0;
+	line-height: 30px;
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+
+.leftMenuList li ul li:hover {
+	background: #4DD0E1;
+	transition: all .4s;
+
+}
+
+.leftMenuList li ul li ul li {
+	padding: 5px;
+	background: #B2EBF2;
+}
+
+.leftMenuList li ul li ul li a span {
+	color: #00838f;
+}
+
+.leftMenuList li ul li ul li:hover {
+	background: #B2EBF2;
+}
+
+.dropdown {
+	color: #fff;
+	text-decoration: none;
+	margin-bottom: 5px;
+	display: block;
+	position: relative;
+}
+
+.active + .dropdownlist {
+	width: 100%;
+	height: auto;
+	line-height: 30px;
+	padding: 0;
+	margin-left: 0;
+	background: #4DD0E1;
+
+}
+
+.hide + .dropdownlist {
+	height: 0;
+}
+
+.active + .dropdownlist:hover {
+	background: #00bcd6;
+}
+
+.dropdownlist {
+	width: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.dropdown:before {
+	font-family: FontAwesome;
+	content: "\f105";
+	transition: all .4s;
+	padding-right: 5px;
+	right: 20px;
+	position: absolute;
+	top: 4px;
+}
+
+.dropdown.active:before {
+	font-family: FontAwesome;
+	content: '\f107';
+	transition: all .4s;
+	padding-right: 5px;
+
+}
+
+.leftMenu:not(.openMenu) li > .dropdownlist {
+	pointer-events: none;
+	height: 0;
+}
+
+
+
+
+
+h1 {
+	margin-top: 60px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+main {
+	margin-top: 60px;
+}
+
+.search__form-block {
+	border-radius: 5px
+
+}
+
+.search__form-head {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.search__form-input {
+	width: 100%;
+	border-style: none;
+}
+
+.tv-shows__head {
+	margin: 15px 0;
+}
+
+.tv-shows__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.tv-shows__item {
+	flex-basis: 25%;
+	margin-bottom: 30px;
+
+}
+
+.tv-card {
+	position: relative;
+	max-width: 205px;
+	min-height: 400px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px;
+	box-shadow: 0 0 3px 0 rgba(200,200,200,.75);
+	border-radius: 5px;
+}
+
+.tv-card__img {
+	border-radius: 5px;
+}
+
+.tv-card__vote {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	text-align: center;
+	color: black;
+	background-color: white;
+	height: 34px;
+	width: 34px;
+	display: inline-block;
+	line-height: 34px;
+	border-radius: 20px;
+	font-weight: 900;
+	box-shadow: 0 0 3px 1px rgba(0,0,0,0.75);
+}
+
+.tv-card__description {
+	overflow: hidden;
+	position: relative;
+	cursor: pointer;
+	display: block;
+	background-color: rgba(255, 193, 6, 0.7);
+	font-weight: 700;
+	border-style: none;
+	margin-left: auto;
+	padding: 5px 15px;
+	border-radius: 15px;
+}
+
+.tv-card__description:hover {
+	background-color: rgba(255, 193, 6, 1);
+	box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+
+}
+
+@media (max-width: 555px) {
+	.leftMenu {
+		height: 50px;
+	}
+
+	.leftMenu:hover {
+		height: 50px;
+	}
+
+	.leftMenu.openMenu {
+		height: 100%;
+	}
+}

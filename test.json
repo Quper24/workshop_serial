@@ -1,0 +1,397 @@
+{
+  "page": 1,
+  "total_results": 21,
+  "total_pages": 2,
+  "results": [
+    {
+      "original_name": "Star Wars Rebels",
+      "genre_ids": [
+        16,
+        10759
+      ],
+      "name": "Звёздные войны: Повстанцы",
+      "popularity": 35.645,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 229,
+      "first_air_date": "2014-10-13",
+      "backdrop_path": "/AdJgkXb8oLI8e4rsk8XzkvABIuw.jpg",
+      "original_language": "en",
+      "id": 60554,
+      "vote_average": 7.4,
+      "overview": "Для Галактики настали тёмные времена. Поглощая один мир за другим, Империя продолжает наращивать свою мощь. Имперские войска, оккупировавшие отдаленную планету, устанавливают на ней деспотический режим. Но находятся смельчаки, готовые противостоять силам Империи. Это экипаж космического корабля «Призрак»! Команде повстанцев предстоит столкнуться лицом к лицу с новыми грозными противниками и стать героями, способными поднять восстание.",
+      "poster_path": "/fhV9ckyBko1ZejEEmwdiXG8YMy5.jpg"
+    },
+    {
+      "original_name": "Star Wars: The Clone Wars",
+      "genre_ids": [
+        16,
+        10759,
+        10765
+      ],
+      "name": "Звёздные войны: Войны клонов",
+      "popularity": 48.947,
+      "origin_country": [
+        "SG",
+        "US"
+      ],
+      "vote_count": 504,
+      "first_air_date": "2008-10-03",
+      "backdrop_path": "/lXWgVQ1whAEMz4Ju88UyPoveIKD.jpg",
+      "original_language": "en",
+      "id": 4194,
+      "vote_average": 8.1,
+      "overview": "Великая Армия Республики, ведомая Йодой, Мейсом Винду, Оби-Ваном Кеноби и другими рыцарями-джедаями, сражается против Новой Армии Дроидов сепаратистов. \n\n \n\nСюжет сериала дополняет вселенную Звездных войн, описывая события, произошедшие между эпизодами II и III.",
+      "poster_path": "/o9XEd15zRzef9SlOuJYPdS5HCdK.jpg"
+    },
+    {
+      "original_name": "Star Wars: Clone Wars",
+      "genre_ids": [
+        16,
+        10759
+      ],
+      "name": "Звёздные войны. Войны клонов",
+      "popularity": 11.837,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 86,
+      "first_air_date": "2003-11-07",
+      "backdrop_path": "/pxkeqSHfTkefKz0y5naAX1u9cDw.jpg",
+      "original_language": "en",
+      "id": 3122,
+      "vote_average": 7.1,
+      "overview": "Мультсериал о приключениях Скайуокера, Кеноби, Винду и битвах армии клонов Старой Республики с легионами Сепаратистов.",
+      "poster_path": "/2lsuke69bRdyB1sxtKmavtwkc35.jpg"
+    },
+    {
+      "original_name": "Star Wars Resistance",
+      "genre_ids": [
+        16,
+        10759,
+        10765
+      ],
+      "name": "Звёздные войны: Сопротивление",
+      "popularity": 9.003,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 26,
+      "first_air_date": "2018-10-07",
+      "backdrop_path": "/9eXNA3K010TlkUTLSzQ07cP6uPF.jpg",
+      "original_language": "en",
+      "id": 79093,
+      "vote_average": 6.4,
+      "overview": "Кадзуда Сионо — молодой пилот, недавно вступивший в ряды Сопротивления под командованием генерала Леи. Несмотря на юный возраст, Кадзуде поручают важное задание — разведать, чем занимается Первый орден.",
+      "poster_path": "/xul6SG8rar3wkHPY8YusUtxcdlZ.jpg"
+    },
+    {
+      "original_name": "Star Wars: Droids",
+      "genre_ids": [
+        16,
+        35,
+        10759,
+        10762
+      ],
+      "name": "Дроиды",
+      "popularity": 5.165,
+      "origin_country": [
+        "US",
+        "CA"
+      ],
+      "vote_count": 21,
+      "first_air_date": "1985-09-07",
+      "backdrop_path": null,
+      "original_language": "en",
+      "id": 25,
+      "vote_average": 4.2,
+      "overview": "Захватывающие приключения дроидов С-ЗРО и R2-D2. В их спокойной размеренной жизни не было ничего необычного, они исправно служили своим хозяевам, пока не произошла интереснейшая встреча с Люком Скайуокером, который вовлёк их в борьбу против гангстеров, пиратов Империи.",
+      "poster_path": "/z8l5c046nQ9KoHpKIrcTBw7P7dL.jpg"
+    },
+    {
+      "original_name": "Star Wars: Ewoks",
+      "genre_ids": [
+        16,
+        10765
+      ],
+      "name": "Эвоки",
+      "popularity": 5.124,
+      "origin_country": [
+        "CA",
+        "US"
+      ],
+      "vote_count": 13,
+      "first_air_date": "1985-09-07",
+      "backdrop_path": "/afHWBChQ16H1xutbtq2lrKFC4TF.jpg",
+      "original_language": "en",
+      "id": 3478,
+      "vote_average": 6.6,
+      "overview": "Действие сериала происходит на лесной луне Эндора в период, предшествующий событиям VI эпизода Звёздных войн. Главными героями сериала являются Уикет Уистри Уоррик вместе с его друзьями, тулгайская ведьма Мораг, а также соперничающие с эвоками племена дюлоков.",
+      "poster_path": "/uv7QkoePPK5PfpYVVim6JI8DEpO.jpg"
+    },
+    {
+      "original_name": "Disney Gallery / Star Wars: The Mandalorian",
+      "genre_ids": [
+        99
+      ],
+      "name": "Disney Gallery / Star Wars: The Mandalorian",
+      "popularity": 6.87,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 3,
+      "first_air_date": "2020-05-04",
+      "backdrop_path": "/a68xDZ48UnzN5KpTwp0UQLyYSYn.jpg",
+      "original_language": "en",
+      "id": 101978,
+      "vote_average": 6.3,
+      "overview": "",
+      "poster_path": "/f2tf2EuXM6hP2OkRWWmIB0uj6HV.jpg"
+    },
+    {
+      "original_name": "Star Wars: Forces of Destiny",
+      "genre_ids": [
+        16,
+        10751,
+        10759,
+        10765
+      ],
+      "name": "Звёздные войны: Силы судьбы",
+      "popularity": 4.863,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 9,
+      "first_air_date": "2017-07-03",
+      "backdrop_path": "/rfxCWSwzkeeQne9Mb8kNPDqZYBC.jpg",
+      "original_language": "en",
+      "id": 71412,
+      "vote_average": 4.6,
+      "overview": "",
+      "poster_path": "/a5d2y264VgYUvpKUNNT6EbL1Cwb.jpg"
+    },
+    {
+      "original_name": "Lego Star Wars: Droid Tales",
+      "genre_ids": [
+        16
+      ],
+      "name": "Lego Звездные войны: Байки дроидов",
+      "popularity": 4.156,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 11,
+      "first_air_date": "2015-10-05",
+      "backdrop_path": "/hytEUV61X3Tp2EOaUZkayH98xVy.jpg",
+      "original_language": "en",
+      "id": 63722,
+      "vote_average": 6.1,
+      "overview": "Главные герои - знакомые всем персонажи далекой-далекой Галактики. В центре сюжета серии - дроиды C-3PO и R2-D2. Находясь в эпицентре легендарных событий, они создали свою версию происходящего и решили поделиться ей с обитателями Вселенной. Дроиды были так увлечены своим рассказом, что не заметили, как таинственный злодей похитил корабль Адмирала Акбара...",
+      "poster_path": "/latxtxQYgODFBwh3dO2TGT3Ooat.jpg"
+    },
+    {
+      "original_name": "Lego Star Wars: The Freemaker Adventures",
+      "id": 66837,
+      "name": "ЛЕГО. Звездные войны. Приключения изобретателей",
+      "popularity": 4.629,
+      "vote_count": 12,
+      "vote_average": 7.3,
+      "first_air_date": "2016-06-20",
+      "poster_path": "/1uI5ZG2eGEV25n3klN4M1SrJCl0.jpg",
+      "genre_ids": [
+        16
+      ],
+      "original_language": "en",
+      "backdrop_path": "/4sHLM2pdGuKFaPxNsaXNR2mf108.jpg",
+      "overview": "События мультсериала разворачиваются между V и VI эпизодами саги «Звёздные Войны». В центре сюжета — увлекательные приключения дружной семьи изобретателей Фримейкеров. Когда младший из них — Рован — находит мощное оружие, за которым охотится Дарт Вейдер, жизнь всей семьи переворачивается с ног на голову. Теперь перед Фримейкерами стоит важная миссия — восстановление спокойствия и свободы в Галактике!",
+      "origin_country": [
+        "US"
+      ]
+    },
+    {
+      "original_name": "Lego Star Wars: The Yoda Chronicles",
+      "genre_ids": [
+        10759,
+        10765
+      ],
+      "name": "Lego Звездные войны: Хроники Йоды",
+      "popularity": 3.587,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 9,
+      "first_air_date": "2013-05-29",
+      "backdrop_path": null,
+      "original_language": "en",
+      "id": 61513,
+      "vote_average": 6.8,
+      "overview": "Наступило время тяжких испытаний. На просторах галактики бушует бесконечная война, где зловещий Дарк Сидиус и его приспешники состряпали новый план свержения Республики. Тем временем в академии джедаев, магистр Йода обучает молодых падаванов, не подозревая о надвигающейся беде. Под обличием друга, Палпатин заставил Йоду отправится на Альдераан, чтобы помочь Оби-Вану Кеноби. На планете его ждала западня, а пока академия была беззащитна, туда наведался генерал Гривус и похитил священный кристалл, способный оживить бессмертную армию. План тёмной стороны был в шаге от свершения, но они не ожидали, что юные джедаи отправятся в погоню за похитителем.",
+      "poster_path": "/1S1j1QxwLNPNiUrq8GSg05KkAmY.jpg"
+    },
+    {
+      "original_name": "LEGO Star Wars: All-Stars",
+      "genre_ids": [
+        16
+      ],
+      "name": "LEGO Star Wars: All-Stars",
+      "popularity": 2.362,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 2,
+      "first_air_date": "2018-11-10",
+      "backdrop_path": "/v5R177GUoZXooZgyLGPntHgb9OC.jpg",
+      "original_language": "en",
+      "id": 83558,
+      "vote_average": 8,
+      "overview": "",
+      "poster_path": "/97dmYYI7TACdGvXWQd2sIyMq16n.jpg"
+    },
+    {
+      "original_name": "Star Wars Rebels Recon",
+      "genre_ids": [],
+      "name": "Star Wars Rebels Recon",
+      "popularity": 1.4,
+      "origin_country": [],
+      "vote_count": 2,
+      "first_air_date": "2014-10-03",
+      "backdrop_path": null,
+      "original_language": "en",
+      "id": 73518,
+      "vote_average": 7.5,
+      "overview": "",
+      "poster_path": "/rwYL1fGB004owaTmprYmx8STKqq.jpg"
+    },
+    {
+      "original_name": "Star Wars Galaxy of Adventures",
+      "genre_ids": [
+        10762,
+        10765
+      ],
+      "name": "Star Wars Galaxy of Adventures",
+      "popularity": 1.314,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 4,
+      "first_air_date": "2018-11-30",
+      "backdrop_path": null,
+      "original_language": "en",
+      "id": 85536,
+      "vote_average": 5.8,
+      "overview": "",
+      "poster_path": "/z2q1RjIX1S2GDc75f4ohT3GQBoK.jpg"
+    },
+    {
+      "original_name": "Science of Star Wars",
+      "genre_ids": [
+        99
+      ],
+      "name": "Science of Star Wars",
+      "popularity": 0.6,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 0,
+      "first_air_date": "2005-05-16",
+      "backdrop_path": null,
+      "original_language": "en",
+      "id": 81401,
+      "vote_average": 0,
+      "overview": "",
+      "poster_path": "/bTaX5IDnbueFD0eHeUJVwUpyjcT.jpg"
+    },
+    {
+      "original_name": "I've Never Seen Star Wars",
+      "genre_ids": [
+        35
+      ],
+      "name": "I've Never Seen Star Wars",
+      "popularity": 0.6,
+      "origin_country": [
+        "GB"
+      ],
+      "vote_count": 0,
+      "first_air_date": "2009-03-12",
+      "backdrop_path": null,
+      "original_language": "en",
+      "id": 17532,
+      "vote_average": 0,
+      "overview": "",
+      "poster_path": null
+    },
+    {
+      "original_name": "LEGO Star Wars: The Resistance Rises",
+      "genre_ids": [
+        16,
+        10765
+      ],
+      "name": "LEGO Star Wars: The Resistance Rises",
+      "popularity": 0.69,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 3,
+      "first_air_date": "2016-02-15",
+      "backdrop_path": "/op6aQ6p9QGmFUxErOGSVHzyUC2R.jpg",
+      "original_language": "en",
+      "id": 66487,
+      "vote_average": 6.2,
+      "overview": "",
+      "poster_path": "/iWTvTLpA83iNj2fG9TxomEo7b5M.jpg"
+    },
+    {
+      "original_name": "Star Wars live-action TV series",
+      "genre_ids": [],
+      "name": "Star Wars live-action TV series",
+      "popularity": 0.6,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 0,
+      "first_air_date": "",
+      "backdrop_path": null,
+      "original_language": "en",
+      "id": 1541,
+      "vote_average": 0,
+      "overview": "",
+      "poster_path": null
+    },
+    {
+      "original_name": "Star Wars: Jedi Temple Challenge",
+      "genre_ids": [],
+      "name": "Star Wars: Jedi Temple Challenge",
+      "popularity": 0.6,
+      "origin_country": [],
+      "vote_count": 0,
+      "first_air_date": "",
+      "backdrop_path": "/3bBC4u27W4TfOkCVKds7nofJCfe.jpg",
+      "original_language": "en",
+      "id": 96101,
+      "vote_average": 0,
+      "overview": "",
+      "poster_path": "/cPWxWAlsJw1QVNNuufPzZzebVtY.jpg"
+    },
+    {
+      "original_name": "Untitled Star Wars: Rogue One Prequel Series",
+      "genre_ids": [
+        18,
+        10759
+      ],
+      "name": "Untitled Star Wars: Rogue One Prequel Series",
+      "popularity": 0.6,
+      "origin_country": [
+        "US"
+      ],
+      "vote_count": 0,
+      "first_air_date": "",
+      "backdrop_path": null,
+      "original_language": "en",
+      "id": 83867,
+      "vote_average": 0,
+      "overview": "",
+      "poster_path": null
+    }
+  ]
+}

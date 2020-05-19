@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+	<meta name="msapplication-TileColor" content="#00aba9">
+	<meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.2/css/all.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<title>Netclicks - все о сериалах</title>
+
+</head>
+<body>
+	<div class="leftMenu">
+		<div class="hamburger active">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<ul class="leftMenuList">
+			<li>
+				<a href="#">
+					<i class="fa fa-home" aria-hidden="true"></i>
+					<span>ГЛАВНАЯ</span>
+				</a>
+
+			</li>
+
+			<li>
+				<a href="#">
+					<i class="fa fa-search" aria-hidden="true"></i>
+					<span>ПОИСК</span>
+				</a>
+			</li>
+			<li>
+				<a href="#" class="dropdown">
+					<i class="fa fa-trophy" aria-hidden="true"></i>
+					<span>РЕЙТИНГ</span>
+				</a>
+				<ul class="dropdownlist">
+					<li>
+						<a href="#">
+							<span>ТОП СЕРИАЛЫ</span>
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<span>ПОПУЛЯРНЫЕ</span>
+						</a>
+					</li>
+
+				</ul>
+			</li>
+			<li>
+				<a href="#" class="dropdown">
+					<i class="fa fa-tv" aria-hidden="true"></i>
+					<span>НОВЫЕ ЭПИЗОДЫ</span>
+				</a>
+				<ul class="dropdownlist">
+					<li>
+						<a href="#" class="dropdown">
+							<span>Сегодня</span>
+						</a>
+
+					</li>
+					<li>
+						<a href="#" class="dropdown">
+							<span>На неделю</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+
+		</ul>
+	</div>
+
+	<header>
+		<div class="container">
+			<h1>Netclicks - все о сериалах</h1>
+
+			<section class="search">
+				<form class="search__form">
+					<fieldset class="search__form-block">
+						<legend class="search__form-head">Поиск</legend>
+						<label>
+							<input type="text" class="search__form-input" id="searchText" placeholder="Введи название...">
+						</label>
+					</fieldset>
+				</form>
+			</section>
+		</div>
+	</header>
+
+	<main>
+		<div class="container">
+            <section class="tv-shows">
+                <h2 class="tv-shows__head">Результат поиска</h2>
+                <ul class="tv-shows__list"></ul>
+            </section>
+
+		</div>
+	</main>
+
+
+	<script src="https://use.fontawesome.com/c79e2f3459.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
