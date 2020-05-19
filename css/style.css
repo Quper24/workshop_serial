@@ -1,3 +1,17 @@
+@font-face {
+	font-family: "Museo Sans";
+	src: url("../fonts/MuseoSansCyrl-500.woff2") format("woff2"),
+		url("../fonts/MuseoSansCyrl-500.woff") format("woff");
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: "Museo Sans";
+	src: url("../fonts/MuseoSansCyrl-900.woff2") format("woff2"),
+		url("../fonts/MuseoSansCyrl-900.woff") format("woff");
+	font-weight: 900;
+}
+
 html {
 	box-sizing: border-box;
 }
@@ -12,8 +26,8 @@ body {
 	margin: 0;
 
 	background-color: rgb(255, 255, 255);
-	font-family: Arial, sans-serif;
-
+	font-family: Museo Sans, Arial, sans-serif;
+	font-weight: 500;
 	font-size: 16px;
 	color: black;
 }
@@ -35,9 +49,13 @@ ul {
 	margin: 0;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
 	padding: 0;
 	margin: 0;
+	font-width: 900;
 }
 
 .visually-hidden {
@@ -57,6 +75,10 @@ h1, h2, h3, p {
 	clear: both;
 }
 
+.hide {
+	display: none!important;
+}
+
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -64,7 +86,7 @@ h1, h2, h3, p {
 }
 
 
-.leftMenu {
+.left-menu {
 	height: 50px;
 	background-color: transparent;
 	position: fixed;
@@ -76,12 +98,12 @@ h1, h2, h3, p {
 	transition: .5s cubic-bezier(.8, .5, .2, 1.4);
 }
 
-.leftMenu:hover {
+.left-menu:hover {
 	height: 100%;
 	background-color: #00838f;
 }
 
-.leftMenu.openMenu {
+.left-menu.openMenu {
 	height: 100%;
 	background-color: #00838f;
 }
@@ -103,7 +125,7 @@ h1, h2, h3, p {
 }
 
 .hamburger.open {
-	background-color: tomato;
+	background-color: #FF637F;
 	transition: all ease .5s;
 }
 
@@ -176,59 +198,58 @@ h1, h2, h3, p {
 	transition: .5s cubic-bezier(.8, .5, .2, 1.4);
 }
 
-.leftMenuList {
+.left-menu__list {
 	margin-top: 70px;
 	list-style: none;
 	padding: 0;
 }
 
-.leftMenuList li {
+.left-menu__list li {
 	width: 250px;
 	/* height: 40px; */
 	line-height: 40px;
 	color: #fff;
-	border-bottom: 1px solid #00bcd6;
 	/* padding : 5px; */
 	font-size: 13px;
 }
 
-.leftMenuList li:hover {
+.left-menu__list li:hover {
 	background-color: #00bcd6;
 	transition: all ease .5s;
 	cursor: pointer;
 
 }
 
-.leftMenuList li a {
+.left-menu__list li a {
 	text-decoration: none;
 	color: #fff;
 }
 
-.leftMenuList li a svg {
+.left-menu__list li a svg {
 	width: 40px;
 	height: 40px;
 	float: left;
 	margin-left: 0;
 }
 
-.leftMenuList li a span {
+.left-menu__list li a span {
 	text-decoration: none;
 	color: #fff;
 	width: 100%;
 }
 
-.dropdownlist li a span {
+.dropdown-list li a span {
 	padding-left: 30px;
 }
 
-.leftMenuList i.fa {
+.left-menu__list i.fa {
 	font-size: 25px;
 	padding: 10px;
 	width: 50px;
 	text-align: center;
 }
 
-.leftMenuList li ul li {
+.left-menu__list li ul li {
 	padding: 0;
 	line-height: 30px;
 	transition: all .4s;
@@ -236,22 +257,22 @@ h1, h2, h3, p {
 }
 
 
-.leftMenuList li ul li:hover {
+.left-menu__list li ul li:hover {
 	background: #4DD0E1;
 	transition: all .4s;
 
 }
 
-.leftMenuList li ul li ul li {
+.left-menu__list li ul li ul li {
 	padding: 5px;
 	background: #B2EBF2;
 }
 
-.leftMenuList li ul li ul li a span {
+.left-menu__list li ul li ul li a span {
 	color: #00838f;
 }
 
-.leftMenuList li ul li ul li:hover {
+.left-menu__list li ul li ul li:hover {
 	background: #B2EBF2;
 }
 
@@ -263,7 +284,7 @@ h1, h2, h3, p {
 	position: relative;
 }
 
-.active + .dropdownlist {
+.active+.dropdown-list {
 	width: 100%;
 	height: auto;
 	line-height: 30px;
@@ -273,15 +294,15 @@ h1, h2, h3, p {
 
 }
 
-.hide + .dropdownlist {
+.hide+.dropdown-list {
 	height: 0;
 }
 
-.active + .dropdownlist:hover {
+.active+.dropdown-list:hover {
 	background: #00bcd6;
 }
 
-.dropdownlist {
+.dropdown-list {
 	width: 0;
 	height: 0;
 	overflow: hidden;
@@ -305,7 +326,7 @@ h1, h2, h3, p {
 
 }
 
-.leftMenu:not(.openMenu) li > .dropdownlist {
+.left-menu:not(.openMenu) li>.dropdown-list {
 	pointer-events: none;
 	height: 0;
 }
@@ -326,7 +347,6 @@ main {
 
 .search__form-block {
 	border-radius: 5px
-
 }
 
 .search__form-head {
@@ -348,6 +368,7 @@ main {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
+
 .tv-shows__item {
 	flex-basis: 25%;
 	margin-bottom: 30px;
@@ -357,65 +378,97 @@ main {
 .tv-card {
 	position: relative;
 	max-width: 205px;
-	min-height: 400px;
+	min-height: 370px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	padding: 10px;
-	box-shadow: 0 0 3px 0 rgba(200,200,200,.75);
-	border-radius: 5px;
+	box-shadow: 3px 3px 20px 1px rgba(200, 200, 200, .75);
 }
 
-.tv-card__img {
-	border-radius: 5px;
+.tv-card__head {
+	padding: 15px 15px 0;
+	max-height: 80px;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 900;
 }
+
+
 
 .tv-card__vote {
 	position: absolute;
-	top: 5px;
-	left: 5px;
+	top: 18px;
+	left: 1px;
 	text-align: center;
-	color: black;
-	background-color: white;
-	height: 34px;
-	width: 34px;
+	color: #FFFFFF;
+	background-color: #FF637D;
+	height: 25px;
+	width: 44px;
 	display: inline-block;
-	line-height: 34px;
-	border-radius: 20px;
+	line-height: 25px;
 	font-weight: 900;
-	box-shadow: 0 0 3px 1px rgba(0,0,0,0.75);
 }
 
-.tv-card__description {
-	overflow: hidden;
-	position: relative;
-	cursor: pointer;
-	display: block;
-	background-color: rgba(255, 193, 6, 0.7);
-	font-weight: 700;
-	border-style: none;
-	margin-left: auto;
-	padding: 5px 15px;
-	border-radius: 15px;
+.modal {
+	position: fixed;
+	top: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(200, 200, 200, .75);
+	z-index: 999;
 }
 
-.tv-card__description:hover {
-	background-color: rgba(255, 193, 6, 1);
-	box-shadow: 0 0 5px 0 rgba(0,0,0,0.75);
+.modal__content {
+	max-width: 800px;
+	background-color: #00838f;
+	padding: 30px;
+	color: #fff;
+}
 
+.modal__description {
+	margin-left: 15px;
+}
+
+.modal__description section {
+	margin-top: 15px;
+}
+
+.modal__link {
+	font-size: 12px;
+	text-align: center;
+	color: #ffc107;
+}
+
+.modal__link:hover {
+	color: #FF637F;
+}
+
+.original__header {
+	display: flex;
+	flex-wrap: nowrap;
+}
+
+.image__content {
+	width: 185px;
+	height: 278px;
 }
 
 @media (max-width: 555px) {
-	.leftMenu {
+	.left-menu {
 		height: 50px;
 	}
 
-	.leftMenu:hover {
+	.left-menu:hover {
 		height: 50px;
 	}
 
-	.leftMenu.openMenu {
+	.left-menu.openMenu {
 		height: 100%;
 	}
 }

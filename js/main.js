@@ -1,138 +1,134 @@
 const API_KEY = '4e61d32c7f8095da04f6550d8cc3dd94';
+const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2';
 
 class DBService {
 
-	getResource = async (url) => {
-		const res = await fetch(url);
-		if (!res.ok) {
-			throw new Error(`Could not fetch , received ${res.status}`);
-		}
-		return await res.json();
-	};
+    getResource = async (url) => {
+        const res = await fetch(url);
+        if (!res.ok) {
+            throw new Error(`Не удалось получить данные по адресу: ${url}, ошибка: ${res.status}`);
+        }
+        return await res.json();
+    };
 
-	getSearch = async (text) => {
-		return await this.getResource(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&language=ru-RU&page=1&include_adult=false&query=${text}`);
-	};
+    getTestCards = async () => {
+        return await this.getResource('test.json');
+    };
 
-	getTest = async () => {
-		return await this.getResource('test.json');
-	};
+    getTestCard = async () => {
+        return await this.getResource('card.json');
+    };
 }
 
 let searchForm = document.querySelector('.search__form');
-let result = document.querySelector('.tv-shows__list');
+let cardsList = document.querySelector('.tv-shows__list');
 
 const renderSearch = () => {
-
-
-	new DBService().getTest('star Wars').then((response) => {
-		console.log(response);
-		let inner = '';
-
-		response.results.forEach(({ backdrop_path: backdrop, name, id,  poster_path: poster, vote_average: vote}) => {
-			let posterIMG = poster ? `https://image.tmdb.org/t/p/w185_and_h278_bestv2${poster}` : './img/no-poster.jpg';
-			inner += `
-				<li class="tv-shows__item">
-					<article class="tv-card">
-						${vote ? `<span class="tv-card__vote">${vote}</span>` : ''}
-						<img class="tv-card__img" src="${posterIMG}" data-backdrop="${backdrop}" alt="${name}">
-						<h3 class="tv-card__head">${name}</h3>
-						<button class="tv-card__description" data-id="${id}">Описание</button>
-					</article>
-				</li>
-                    `;
-
-		});
-		result.innerHTML = inner;
-	});
-
-
+    new DBService().getTestCards().then((response) => {
+        console.log(response);
+        cardsList.textContent = '';
+        response.results.forEach(({backdrop_path: backdrop, name, poster_path: poster, vote_average: vote}) => {
+            let posterIMG = poster ? IMG_URL + poster : './img/no-poster.jpg';
+            let backdropIMG = backdrop ? IMG_URL + backdrop : '';
+            const card = document.createElement('li');
+            card.className = 'tv-shows__item'
+            card.innerHTML = `
+					<a href="#" class="tv-card">
+							${vote ? `<span class="tv-card__vote">${vote}</span>` : ''}
+							<img class="tv-card__img" src="${posterIMG}" data-backdrop="${backdropIMG}" alt="${name}">
+							<h3 class="tv-card__head">${name}</h3>
+					</a>
+			`;
+            cardsList.insertAdjacentElement('beforeend', card);
+        });
+    });
 };
 
 renderSearch();
 
 
-searchForm.addEventListener('submit', e => {
-	e.preventDefault();
-	let searchText = document.querySelector('.form-control').value;
-	let request = new XMLHttpRequest();
-
-	request.open('GET', 'https://api.themoviedb.org/3/search/tv?api_key=4e61d32c7f8095da04f6550d8cc3dd94&language=ru-RU&page=1&include_adult=false&query=' + searchText);
-
-	request.send();
-
-	request.addEventListener('readystatechange', function() {
-
-
-		if (request.readyState < 4) {
-			result.innerHTML = 'Загрузка';
-		} else if (request.readyState === 4) {
-			if (request.status === 200 && request.status < 300) {
-
-				let output = JSON.parse(this.responseText);
-
-				let inner = '';
-
-				for (let resultsKey in output.results) {
-					let movie = output.results[resultsKey];
-					let posterIMG = movie.poster_path ? `https://image.tmdb.org/t/p/w185_and_h278_bestv2${movie.poster_path}` : './img/no-poster.jpg';
-					genres.push(movie.genre_ids);
-					console.log(movie.genre_ids);
-					inner += `
-                        <div class="col-md-3">
-                            <div class="well text-center">
-                                <img src="${posterIMG}">
-                                    <h5>${movie.title}</h5>
-                                <a class="btn btn-primary" href="#">Описание</a>
-                            </div>
-                        </div>
-                    `;
-
-				}
-				result.innerHTML = inner;
-
-
-				console.log('Status:', this.status);
-				console.log('Body:', output.results);
-
-			}
-		} else {
-			result.innerHTML = 'Error';
-		}
-
-
-	});
-
-
-});
-
-
 //menu
-const leftMenu = document.querySelector(".leftMenu");
+const leftMenu = document.querySelector(".left-menu");
 const hamburger = document.querySelector(".hamburger");
 
-hamburger.addEventListener('click', function() {
+hamburger.addEventListener('click', function () {
 
-	leftMenu.classList.toggle("openMenu");
-	hamburger.classList.toggle("open");
+    leftMenu.classList.toggle("openMenu");
+    hamburger.classList.toggle("open");
 
 
 });
 
 leftMenu.addEventListener('click', (event) => {
-	const target = event.target;
-	const dropdown = target.closest('.dropdown');
-	if (dropdown) {
-		dropdown.classList.toggle('active');
-		leftMenu.classList.add("openMenu");
-		hamburger.classList.add("open");
-	}
+    const target = event.target;
+    const dropdown = target.closest('.dropdown');
+    if (dropdown) {
+        dropdown.classList.toggle('active');
+        leftMenu.classList.add("openMenu");
+        hamburger.classList.add("open");
+    }
 
 
 });
 
-// id 33123
-// 1396
+//смена карточки
+
+
+const changeImage = event => {
+    const target = event.target;
+    if (target.matches('.tv-card__img')) {
+        const changeImage = target.dataset.backdrop;
+        target.dataset.backdrop = target.src;
+        if (changeImage) {
+            target.src = changeImage
+        }
+    }
+};
+
+cardsList.addEventListener('mouseover', changeImage);
+cardsList.addEventListener('mouseout', changeImage);
+
+
+// модалка
+
+const modal = document.querySelector('.modal'),
+	img = modal.querySelector('.tv-card__img'),
+	link = modal.querySelector('.modal__link'),
+	title = modal.querySelector('.modal__title'),
+	genres = modal.querySelector('.genres-list'),
+	rating = modal.querySelector('.rating'),
+	description = modal.querySelector('.description');
+
+cardsList.addEventListener('click', event => {
+    const target = event.target.closest('.tv-card');
+
+    if (target) {
+
+        new DBService().getTestCard()
+            .then(response => {
+				console.log(response)
+				img.src = IMG_URL + response.poster_path;
+				img.alt = response.name;
+				link.href = response.homepage;
+				title.textContent = response.name;
+				genres.textContent = '';
+				response.genres.forEach(item => {
+					genres.innerHTML += `<li>${item.name}</li>`
+				})
+				rating.textContent = response.vote_average;
+				description.textContent = response.overview;
+            })
+            .then(() => {
+                modal.classList.remove('hide')
+            })
+    }
+
+});
+
+
+
+;
+
 
 //получить жанр
 
