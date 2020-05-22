@@ -70,7 +70,7 @@ class DBService {
 
 
 const renderCards = (response, target) => {
-    
+
     cardsList.textContent = '';
 
     if (!response.total_results) {
@@ -79,7 +79,7 @@ const renderCards = (response, target) => {
         return;
     }
 
-    headSearch.textContent = target ? target.textContent : 'Результат поиска:'
+    headSearch.textContent = target ? target.textContent : 'Результат поиска:';
 
     response.results.forEach(item => {
         const {
@@ -95,7 +95,7 @@ const renderCards = (response, target) => {
         const voteValue = vote ? `<span class="tv-card__vote">${vote}</span>` : '';
 
         const card = document.createElement('li');
-        card.className = 'tv-shows__item'
+        card.className = 'tv-shows__item';
         card.innerHTML = `
 			<a href="#" class="tv-card" id="${id}">
 				${voteValue}
@@ -176,7 +176,6 @@ leftMenu.addEventListener('click', event => {
         hamburger.classList.add("open");
     }
 });
-
 
 //модальное окно
 
