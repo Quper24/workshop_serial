@@ -1,7 +1,7 @@
 const IMG_URL = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2';
 const API_KEY = '4e61d32c7f8095da04f6550d8cc3dd94';
-const leftMenu = document.querySelector(".left-menu");
-hamburger = document.querySelector(".hamburger"),
+const leftMenu = document.querySelector(".left-menu"),
+    hamburger = document.querySelector(".hamburger"),
     cardsList = document.querySelector('.tv-shows__list'),
     modal = document.querySelector('.modal'),
     img = modal.querySelector('.tv-card__img'),
@@ -13,7 +13,8 @@ hamburger = document.querySelector(".hamburger"),
     tvShows = document.querySelector('.tv-shows'),
     preloader = document.querySelector('.preloader'),
     searchForm = document.querySelector('.search__form'),
-    searchFormInput = document.querySelector('.search__form-input');
+    searchFormInput = document.querySelector('.search__form-input'),
+    headSearch = document.querySelector('.tv-shows__head');
 
 
 const loading = document.createElement('div');
@@ -44,17 +45,49 @@ class DBService {
             query);
     };
 
+    getTvShow = async (id) => {
+        return await this.getResource(`https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}&language=ru-RU`);
+    };
+
+    getTopRated = async () => {
+        return await this.getResource(`https://api.themoviedb.org/3/tv/top_rated?api_key=4e61d32c7f8095da04f6550d8cc3dd94&language=ru-RU&page=1`);
+    };
+
+    getPopular = async () => {
+        return await this.getResource(`https://api.themoviedb.org/3/tv/popular?api_key=4e61d32c7f8095da04f6550d8cc3dd94&language=ru-RU&page=1`);
+    };
+
+    getToday = async () => {
+        return await this.getResource(`https://api.themoviedb.org/3/tv/airing_today?api_key=4e61d32c7f8095da04f6550d8cc3dd94&language=ru-RU&page=1`);
+    };
+
+    getWeek = async () => {
+        return await this.getResource(`https://api.themoviedb.org/3/tv/on_the_air?api_key=4e61d32c7f8095da04f6550d8cc3dd94&language=ru-RU&page=1`);
+    };
+
+
 }
 
-const renderCards = response => {
-    console.log(response);
+
+const renderCards = (response, target) => {
+    
     cardsList.textContent = '';
+
+    if (!response.total_results) {
+        loading.remove();
+        headSearch.textContent = 'К сожалению по вашему запросу ничего не найдено...';
+        return;
+    }
+
+    headSearch.textContent = target ? target.textContent : 'Результат поиска:'
+
     response.results.forEach(item => {
         const {
             backdrop_path: backdrop,
             name: title,
             poster_path: poster,
-            vote_average: vote
+            vote_average: vote,
+            id
         } = item;
 
         const posterIMG = poster ? IMG_URL + poster : './img/no-poster.jpg';
@@ -64,7 +97,7 @@ const renderCards = response => {
         const card = document.createElement('li');
         card.className = 'tv-shows__item'
         card.innerHTML = `
-			<a href="#" class="tv-card">
+			<a href="#" class="tv-card" id="${id}">
 				${voteValue}
 				<img class="tv-card__img"
 					src="${posterIMG}"
@@ -91,6 +124,31 @@ searchForm.addEventListener('submit', event => {
     return false
 });
 
+leftMenu.addEventListener('click', event => {
+    event.preventDefault();
+    const target = event.target;
+
+    if (target.closest('#top-rated')) {
+        new DBService().getTopRated().then(response => renderCards(response, target));
+    }
+
+    if (target.closest('#popular')) {
+        new DBService().getPopular().then(response => renderCards(response, target));
+    }
+
+    if (target.closest('#today')) {
+        new DBService().getToday().then(response => renderCards(response, target));
+    }
+
+    if (target.closest('#week')) {
+        new DBService().getWeek().then(response => renderCards(response, target));
+    }
+
+    if (target.closest('#search')) {
+        cardsList.textContent = '';
+    }
+
+});
 
 
 // 1) открытие/закрытие на кнопку
@@ -128,11 +186,16 @@ cardsList.addEventListener('click', event => {
 
     if (target) {
         preloader.style.display = 'block';
-        new DBService().getTestCard()
+        new DBService().getTvShow(target.id)
             .then(response => {
                 img.src = IMG_URL + response.poster_path;
                 img.alt = response.name;
-                link.href = response.homepage;
+                if (response.homepage) {
+                    link.href = response.homepage;
+                    link.style.display = '';
+                } else {
+                    link.style.display = 'none';
+                }
                 title.textContent = response.name;
                 genres.textContent = '';
                 response.genres.forEach(item => {
