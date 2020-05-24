@@ -70,7 +70,6 @@ class DBService {
 
 
 const renderCards = (response, target) => {
-
     cardsList.textContent = '';
 
     if (!response.total_results) {
@@ -146,6 +145,7 @@ leftMenu.addEventListener('click', event => {
 
     if (target.closest('#search')) {
         cardsList.textContent = '';
+        headSearch.textContent = 'Результат поиска:';
     }
 
 });
